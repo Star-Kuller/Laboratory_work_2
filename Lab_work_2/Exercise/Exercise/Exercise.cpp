@@ -62,16 +62,18 @@ void N_3()
     else {
         cout << " лет ";
     }
-    cout << "вы получите " << intermediate << " доллара.\n";
+    printf("вы получите %20.0f доллара.\n", intermediate);
     cout << "------------------------------------------------------\n";
     cout << "Расчёты:\n";
     intermediate = deposit;
     for (int i = 0; i < years; i++) {
-        cout << "В конце " << i+1 << "-го года вы получите " << intermediate << " + (" << intermediate << " * " << percent/100 << ") = ";
+        /*cout << "В конце " << i+1 << "-го года вы получите " << intermediate << " + (" << intermediate << " * " << percent/100 << ") = ";*/
+        printf("В конце %i-го года вы получите %20.0f + (%20.0f * %3.4f) = ", i + 1, intermediate, intermediate, percent / 100);
         intermediate += intermediate * percent/100;
-        cout << intermediate  << "\n";
+        printf("%20.0f\n", intermediate);
     }
-    cout << "Итог:" << intermediate << "\n";
+   /* cout << "Итог:" << intermediate << "\n";*/
+    printf("Итог: %20.0f\n", intermediate);
     cout << endl << "Возвращение в меню...\n";
     cout << "------------------------------------------------------\n";
 }
